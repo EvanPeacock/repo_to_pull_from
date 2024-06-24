@@ -17,7 +17,7 @@ __version__ = '1.0.0'
 
 
 
-import itertools
+import itertools, sys
 
 class Spinner:
 
@@ -48,7 +48,7 @@ class Spinner:
         return next(self.spinner)
 
     def write(self,append_str=''):
-        outstr = f"{spinner.spin}{append_str}"
+        outstr = f"{self.spin}{append_str}"
         bs = len(outstr)*"\b"+"\b"
         sys.stdout.write(f"{bs}{outstr}")
         sys.stdout.flush()
